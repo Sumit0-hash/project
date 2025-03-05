@@ -104,7 +104,7 @@ const modules = [
 // User achievements
 const achievements = [
   { id: 1, title: 'First Module Completed', icon: 'BookOpen', earned: true, date: '2025-03-15' },
-  { id: 2, title: 'Budget Master', icon: 'DollarSign', earned: false },
+  { id: 2, title: 'Budget Master', icon: 'IndianRupee', earned: false },
   { id: 3, title: 'Investment Novice', icon: 'TrendingUp', earned: false },
   { id: 4, title: 'Quiz Champion', icon: 'Award', earned: true, date: '2025-03-20' },
   { id: 5, title: 'Consistent Learner', icon: 'Calendar', earned: false },

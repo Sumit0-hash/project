@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Plus, Trash2, DollarSign, PieChart as PieChartIcon, BarChart2 } from 'lucide-react';
+import { Plus, Trash2, IndianRupee, PieChart as PieChartIcon, BarChart2 } from 'lucide-react';
 
 // Default expense categories
 const defaultCategories = [
@@ -203,7 +203,7 @@ const BudgetSimulator = () => {
           {/* Income Sources */}
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4 flex items-center">
-              <DollarSign className="h-5 w-5 mr-2 text-green-500" />
+              <IndianRupee className="h-5 w-5 mr-2 text-green-500" />
               Income Sources
             </h2>
             
@@ -219,7 +219,7 @@ const BudgetSimulator = () => {
                   />
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                      $
+                    ₹
                     </span>
                     <input
                       type="number"
@@ -319,7 +319,7 @@ const BudgetSimulator = () => {
                   />
                   <div className="relative">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                      $
+                    ₹
                     </span>
                     <input
                       type="number"
@@ -358,16 +358,16 @@ const BudgetSimulator = () => {
             <div className="grid grid-cols-3 gap-4 mb-4">
               <div className="bg-green-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-600 mb-1">Total Income</p>
-                <p className="text-2xl font-bold text-green-600">${totalIncome.toFixed(2)}</p>
+                <p className="text-2xl font-bold text-green-600">₹{totalIncome.toFixed(2)}</p>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-600 mb-1">Total Expenses</p>
-                <p className="text-2xl font-bold text-red-600">${totalExpenses.toFixed(2)}</p>
+                <p className="text-2xl font-bold text-red-600">₹{totalExpenses.toFixed(2)}</p>
               </div>
               <div className={`p-4 rounded-lg ${netIncome >= 0 ? 'bg-blue-50' : 'bg-yellow-50'}`}>
                 <p className="text-sm text-gray-600 mb-1">Net Income</p>
                 <p className={`text-2xl font-bold ${netIncome >= 0 ? 'text-blue-600' : 'text-yellow-600'}`}>
-                  ${netIncome.toFixed(2)}
+                ₹{netIncome.toFixed(2)}
                 </p>
               </div>
             </div>
@@ -384,7 +384,7 @@ const BudgetSimulator = () => {
                   </div>
                 </div>
                 <p className="text-sm font-medium">
-                  ${currentSavings.toFixed(0)} / ${savingsGoal.toFixed(0)}
+                ₹{currentSavings.toFixed(0)} / ₹{savingsGoal.toFixed(0)}
                 </p>
               </div>
             </div>
@@ -396,7 +396,7 @@ const BudgetSimulator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -413,7 +413,7 @@ const BudgetSimulator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -475,7 +475,7 @@ const BudgetSimulator = () => {
                         ))}
                       </Pie>
                       <Tooltip 
-                        formatter={(value) => [`$${value.toFixed(2)}`, 'Amount']}
+                        formatter={(value) => [`₹${value.toFixed(2)}`, 'Amount']}
                       />
                     </PieChart>
                   ) : (
@@ -491,7 +491,7 @@ const BudgetSimulator = () => {
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="name" />
                       <YAxis />
-                      <Tooltip formatter={(value) => [`$${value.toFixed(2)}`, 'Amount']} />
+                      <Tooltip formatter={(value) => [`₹${value.toFixed(2)}`, 'Amount']} />
                       <Legend />
                       <Bar dataKey="value" name="Amount">
                         {chartData.map((entry, index) => (
@@ -523,7 +523,7 @@ const BudgetSimulator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -540,7 +540,7 @@ const BudgetSimulator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -557,7 +557,7 @@ const BudgetSimulator = () => {
               
               <div className="p-4 bg-gray-50 rounded-md">
                 <p className="text-sm text-gray-600">
-                  With these changes, your monthly net income would be <span className="font-semibold">${netIncome.toFixed(2)}</span> and you could reach your savings goal in <span className="font-semibold">X months</span>.
+                  With these changes, your monthly net income would be <span className="font-semibold">₹{netIncome.toFixed(2)}</span> and you could reach your savings goal in <span className="font-semibold">X months</span>.
                 </p>
               </div>
             </div>

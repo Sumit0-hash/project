@@ -104,7 +104,7 @@ const ExpenseTracker: React.FC = () => {
                     <ul>
                         {expenses.map(exp => (
                             <li key={exp.id} className="flex justify-between border-b p-2">
-                                <span>{exp.date} - {exp.category}: {exp.description} - ${exp.amount}</span>
+                                <span>{exp.date} - {exp.category}: {exp.description} - ₹{exp.amount}</span>
                                 <button onClick={() => setExpenses(expenses.filter(e => e.id !== exp.id))} className="text-red-500"><Trash2 /></button>
                             </li>
                         ))}

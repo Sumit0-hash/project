@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { DollarSign, TrendingUp, AlertTriangle } from 'lucide-react';
+import { IndianRupee , TrendingUp, AlertTriangle } from 'lucide-react';
 
 const InvestmentCalculator = () => {
   // Investment parameters
@@ -101,7 +101,7 @@ const InvestmentCalculator = () => {
   const formatCurrency = (value) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'INR',
       maximumFractionDigits: 0
     }).format(value);
   };
@@ -162,7 +162,7 @@ const InvestmentCalculator = () => {
         <div className="lg:col-span-1">
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4 flex items-center">
-              <DollarSign className="h-5 w-5 mr-2 text-green-500" />
+              <IndianRupee className="h-5 w-5 mr-2 text-green-500" />
               Investment Parameters
             </h2>
             
@@ -173,7 +173,7 @@ const InvestmentCalculator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -191,7 +191,7 @@ const InvestmentCalculator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -365,8 +365,8 @@ const InvestmentCalculator = () => {
                     label={{ value: 'Years', position: 'insideBottomRight', offset: -10 }} 
                   />
                   <YAxis 
-                    tickFormatter={(value) => `$${value.toLocaleString()}`}
-                    label={{ value: 'Value ($)', angle: -90, position: 'insideLeft' }}
+                    tickFormatter={(value) => `₹${value.toLocaleString()}`}
+                    label={{ value: 'Value (₹)', angle: -90, position: 'insideLeft' }}
                   />
                   <Tooltip 
                     formatter={(value) => [formatCurrency(value), 'Value']}
@@ -424,7 +424,7 @@ const InvestmentCalculator = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
-                    $
+                  ₹
                   </span>
                   <input
                     type="number"
@@ -474,16 +474,16 @@ const InvestmentCalculator = () => {
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Example</h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  If you invest $10,000 at a 7% annual return:
+                  If you invest ₹10,000 at a 7% annual return:
                 </p>
                 <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                  <li>After 10 years: ~$19,672</li>
-                  <li>After 20 years: ~$38,697</li>
-                  <li>After 30 years: ~$76,123</li>
-                  <li>After 40 years: ~$149,745</li>
+                  <li>After 10 years: ~₹19,672</li>
+                  <li>After 20 years: ~₹38,697</li>
+                  <li>After 30 years: ~₹76,123</li>
+                  <li>After 40 years: ~₹149,745</li>
                 </ul>
                 <p className="text-gray-600 text-sm mt-4">
-                  Adding just $500 per month dramatically increases these figures!
+                  Adding just ₹500 per month dramatically increases these figures!
                 </p>
               </div>
             </div>
